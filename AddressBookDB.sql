@@ -43,3 +43,7 @@ where firstName = 'def';
 # UC 6
 select * from addressBookTable 
 where city = 'Mumbai' or state = 'Maharashtra';
+
+# UC 7
+select city, state, count(*) from address_book 
+group by city, state;
