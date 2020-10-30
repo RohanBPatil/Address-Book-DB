@@ -35,3 +35,7 @@ where firstName = 'def';
 update addressBookTable
 set address = 'Shivdi'
 where firstName = 'xyz';
+
+# UC 5
+delete from addressBookTable
+where firstName = 'def';
