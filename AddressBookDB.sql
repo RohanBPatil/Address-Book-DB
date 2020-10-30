@@ -47,3 +47,8 @@ where city = 'Mumbai' or state = 'Maharashtra';
 # UC 7
 select city, state, count(*) from address_book 
 group by city, state;
+
+# UC 8
+select * from addressBookTable
+where city = 'Mumbai'
+order by firstName, lastName;
