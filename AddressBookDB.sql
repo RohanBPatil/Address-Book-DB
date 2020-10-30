@@ -11,7 +11,7 @@ lastName varchar(100) not null,
 address varchar(200) not null,
 city varchar(100) not null,
 state varchar(100) not null,
-zip numeric(6) not null,git a
+zip numeric(6) not null,
 phone numeric(10) not null,
 email varchar(100) not null,
 primary key (firstName, lastName)
@@ -39,3 +39,7 @@ where firstName = 'xyz';
 # UC 5
 delete from addressBookTable
 where firstName = 'def';
+
+# UC 6
+select * from addressBookTable 
+where city = 'Mumbai' or state = 'Maharashtra';
