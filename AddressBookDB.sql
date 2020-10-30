@@ -26,3 +26,12 @@ insert into addressBookTable values
 ('klm', 'mlk', 'Shirala', 'Sangli', 'Maharashtra', 408574, 9865358748, 'klm@gmail.com'),
 ('def', 'fed', 'Vasco', 'Panji', 'Goa', 251202, 8400326598, 'def@gmail.com'),
 ('uvw', 'wvu', 'Mapusa', 'Panji', 'Goa', 251277, 7800055598, 'uvw@gmail.com');
+
+
+# UC 4
+update addressBookTable
+set phone = 1234567890
+where firstName = 'def';
+update addressBookTable
+set address = 'Shivdi'
+where firstName = 'xyz';
