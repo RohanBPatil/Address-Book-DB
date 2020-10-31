@@ -56,7 +56,6 @@ order by firstName, lastName;
 # UC 9
 alter table addressbooktable 
 rename to contacts_table;
-
 alter table contacts_table
 drop primary key,
 add contactId int not null auto_increment first, 
@@ -75,3 +74,14 @@ desc addressbook_table;
 # UC 10
 select type, count(*) from addressbook_table 
 group by type;
+
+# UC 11
+insert into addressbook_table (contactId, addressbookName, type) values 
+(1, 'AddressBook1', 'family'),
+(1, 'AddressBook2', 'friend'),
+(2, 'AddressBook2','friend'), 
+(2, 'AddressBook3','profession'),
+(3, 'AddressBook1','family'),
+(4, 'AddressBook3','profession'), 
+(4, 'AddressBook1','family'),
+(5, 'AddressBook2','friend');
