@@ -56,7 +56,9 @@ order by firstName, lastName;
 # UC 9
 alter table addressbooktable 
 rename to contacts_table;
+
 alter table contacts_table
+drop primary key,
 add contactId int not null auto_increment first, 
 add primary key (contactId);
 create table addressbook_table
@@ -69,3 +71,7 @@ primary key (srNo),
 foreign key (contactId) references contacts_table (contactId)
 );
 desc addressbook_table;
+
+# UC 10
+select type, count(*) from addressbook_table 
+group by type;
