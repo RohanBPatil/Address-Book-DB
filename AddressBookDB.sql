@@ -52,3 +52,20 @@ group by city, state;
 select * from addressBookTable
 where city = 'Mumbai'
 order by firstName, lastName;
+
+# UC 9
+alter table addressbooktable 
+rename to contacts_table;
+alter table contacts_table
+add contactId int not null auto_increment first, 
+add primary key (contactId);
+create table addressbook_table
+(
+srNo int not null auto_increment,
+contactId int not null,
+addressbookName varchar(100) not null,
+type varchar(100) not null,
+primary key (srNo),
+foreign key (contactId) references contacts_table (contactId)
+);
+desc addressbook_table;
