@@ -96,7 +96,7 @@ foreign key (zip) references contact_table(zip)
 create table addressbookTypes (
 addressbookName varchar(100) not null,
 type varchar(100) not null,
-foreign key (addressbookName) references contact_table(addressbookName)
+foreign key (addressbookName) references contacts_table(addressbookName)
 );
 alter table contacts_table 
 drop column city,
@@ -114,3 +114,11 @@ insert into addressbookTypes values
 (408574, 'Sangli', 'Maharashtra'),
 (251202, 'Panji', 'Goa'),
 (251277, 'Panji', 'Goa');
+
+# UC 13
+select  contacts_table.contactId, addressbook_table.addressbookName, addressbookTypes.type, contacts_table.firstName, contacts_table.lastName, 
+contacts_table.address, zipCityState.city, zipCityState.state, contacts_table.zip, contacts_table.phone, contacts_table.email
+from contacts_table
+inner join zipCityState on contacts_table.zip = zipCityState.zip
+inner join addressbook_table on contacts_table.contactId = addressbook_table.contactId
+inner join addressbookTypes on addressbookTypes.addressbookName = addressbook_table.addressbookName;
